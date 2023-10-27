@@ -23,3 +23,9 @@ target_link_libraries(p1ac PRIVATE PoseLib::PoseLib)
 
 add_subdirectory(examples)
 
+set_target_properties(p1ac PROPERTIES PUBLIC_HEADER "p1ac/p1ac.h")
+INSTALL(TARGETS p1ac 
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include/p1ac
+)
+
